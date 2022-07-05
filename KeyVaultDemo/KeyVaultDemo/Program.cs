@@ -11,7 +11,6 @@ namespace KeyVaultDemo
             var vaultUrl = "https://rm-keyvault-demo.vault.azure.net";
             var client = new SecretClient(vaultUri: new Uri(vaultUrl), credential: new DefaultAzureCredential());
 
-            // Retrieve a key using the key client.
             var secret = (await client.GetSecretAsync("Flintstone")).Value.Value;
 
             Console.WriteLine(secret);
